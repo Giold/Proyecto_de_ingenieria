@@ -78,7 +78,7 @@ def sorting(filename):
       outfile.writelines("\n")
   #Imprime las palabras en orden y cierra el archivo. 
   outfile.close()
-  final_list = list(OrderedDict.fromkeys(Ruta))
+  final_list = list(OrderedDict.fromkeys(palabras))
   print(final_list)
 sorting("Resultado.txt")
 
