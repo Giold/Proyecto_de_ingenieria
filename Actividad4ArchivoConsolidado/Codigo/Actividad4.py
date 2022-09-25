@@ -46,7 +46,7 @@ txt.write ("\n" + "Tiempo Total en quitar las Etiquetas HTML: " + str(round(tota
 txt.write ("Tiempo Total de Ejecucion: " + str(tiempo_all) + "\n")
 txt.close()
 
-#Actividad 3
+#Funcion que imprime el resultado
 def sorting(filename):
   #Abre el archivo llamado SinEtiquetas.txt
   infile = open('SinEtiquetas.txt')
