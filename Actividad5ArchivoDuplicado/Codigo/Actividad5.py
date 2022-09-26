@@ -54,6 +54,7 @@ def sorting(filename):
   
   #Crea una cadena de palabras
   palabras = []
+  palabrasunicas = []
   
   #
 
@@ -61,6 +62,7 @@ def sorting(filename):
   for line in infile:
     temp = line.split()
     for i in temp:
+      
       [palabras.append(i.lower())] #Con el .lower se degrada palabra por palabra a minúsculas
   infile.close()
 
@@ -75,10 +77,12 @@ def sorting(filename):
       
         #Hace el ciclo hasta que se acaben las palabras y pasa por otra linea. 
       outfile.writelines(i)
+      
+     
+      
       outfile.writelines("\n")
   #Imprime las palabras en orden y cierra el archivo. 
   outfile.close()
-  final_list = list(OrderedDict.fromkeys(palabras))
-  print(final_list)
+  
 sorting("Resultado.txt")
 
