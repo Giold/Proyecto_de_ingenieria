@@ -6,10 +6,10 @@ import time # libreria para cronometrar
 from bs4 import BeautifulSoup # libreria para eliminar tags html - (pip install beautifulsoup4)
 from prettytable import PrettyTable
 
-archivos = r"C:\Users\vatil\Documents\Tarea\Agosto-Dec 2022\Proyectos de Ingenieria de software\fase2\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Files" # Carpeta de archivos html
-archivosfix = r"C:\Users\vatil\Documents\Tarea\Agosto-Dec 2022\Proyectos de Ingenieria de software\fase2\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesFix" # Carpeta para almacenar archivos html sin etiquetas
-archivosList = r"C:\Users\vatil\Documents\Tarea\Agosto-Dec 2022\Proyectos de Ingenieria de software\fase2\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesList" # Carpeta para almacenar lista de texto de los html
-archivosToken = r"C:\Users\vatil\Documents\Tarea\Agosto-Dec 2022\Proyectos de Ingenieria de software\fase2\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesToken" # Carpeta para almacenar listas tokenizadas
+archivos = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Files" # Carpeta de archivos html
+archivosfix = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesFix" # Carpeta para almacenar archivos html sin etiquetas
+archivosList = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesList" # Carpeta para almacenar lista de texto de los html
+archivosToken = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesToken" # Carpeta para almacenar listas tokenizadas
 
 #Funcion para abrir y cronometrar los archivos 
 def open_file():
