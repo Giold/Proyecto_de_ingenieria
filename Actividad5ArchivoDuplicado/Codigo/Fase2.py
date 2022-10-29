@@ -197,10 +197,12 @@ def Ascii():
 
     print("\ntiempo total en acumular el diccionario:", f"{total:.2f}", "segundos")
     print("\ntiempo total de ejecucion:", f"{endF-startF:.2f}", "segundos")
+     
 
-        
+    sys.stdout.close()  
+    
+    
 
-    sys.stdout.close()   
 
 #Ejecucion de funciones
 open_file()
@@ -208,3 +210,4 @@ remove_html_tags()
 create_list()
 tokenization()
 Ascii()
+
