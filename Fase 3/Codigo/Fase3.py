@@ -11,6 +11,7 @@ archivosfix = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5
 archivosList = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesList" # Carpeta para almacenar lista de texto de los html
 archivosToken = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesToken" # Carpeta para almacenar listas tokenizadas
 
+
 #Funcion para abrir y cronometrar los archivos 
 def open_file():
 
@@ -206,9 +207,10 @@ def Diccionario():
     total = 0
     countTotalAr = dict()
     countTotal = dict()
+
     
     mytable= PrettyTable(["Nombre_Archivo","Numero de documentos que contiene esas palabra","Posicion del primer registro en el archivo de posting"])
-    sys.stdout = open("Diccionario.txt", "w+") #creacion de txt con los tiempos
+    sys.stdout = open("Postin.txt", "w+") #creacion de txt con los tiempos
     for filename in os.listdir(archivos):
         start = time.time()
         with open(os.path.join(archivosToken, filename), "r") as f:
@@ -226,6 +228,8 @@ def Diccionario():
                         else:
                             countTotalAr[word] = number
                             countTotal[word]=1
+                            
+
                     
                     #for word in outfile:                       
                         #word = re.sub(r"\n","", word) #Eliminar saltos de linea
@@ -245,10 +249,11 @@ def Diccionario():
     with open("Dictionary_List.txt","w") as fin:   
         for key, value in countTotalAr.items():             
             value = str(value)
-            value_2 = str(value)           
+            value_2 = list (enumerate(value))
+                    
             
             #fin.write(key+", "+value+", "+value_2+"\n")            
-            mytable.add_row([key,value,value_2 ])        
+            mytable.add_row([key,value,value_2])        
         stingtable= mytable.get_string()
         fin.write(stingtable)
         
