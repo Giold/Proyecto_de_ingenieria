@@ -199,15 +199,73 @@ def Ascii():
     print("\ntiempo total de ejecucion:", f"{endF-startF:.2f}", "segundos")
      
 
-    sys.stdout.close()  
-    
+    sys.stdout.close()
+
 def Diccionario():
     startF = time.perf_counter()
     total = 0
     countTotalAr = dict()
     countTotal = dict()
     
-    mytable= PrettyTable(["Nombre_Archivo","Frecuencia(repeticiones)del token en el archivo","lmao"])
+    mytable= PrettyTable(["Nombre_Archivo","Numero de documentos que contiene esas palabra","Posicion del primer registro en el archivo de posting"])
+    sys.stdout = open("Diccionario.txt", "w+") #creacion de txt con los tiempos
+    for filename in os.listdir(archivos):
+        start = time.time()
+        with open(os.path.join(archivosToken, filename), "r") as f:
+                
+            #with open(os.path.join(archivosList, filename), 'r') as outfile:
+                    for word in f: # Saber la cantidad de archivos que contienen una misma palabra                      
+                        word = re.sub(r"\n","", word)
+                        number=(re.sub(r"\s","",word))#Quitar el espacio en blanco
+                        number=int(re.sub(r"(\D+)","",word))#Quitar los no numeros
+                        word = re.sub(r"(\d+)", '', word)#Quita los numeros                    
+                        
+                        if word in countTotalAr:
+                            countTotalAr[word]+=number
+                            countTotal[word]+=1
+                        else:
+                            countTotalAr[word] = number
+                            countTotal[word]=1
+                    
+                    #for word in outfile:                       
+                        #word = re.sub(r"\n","", word) #Eliminar saltos de linea
+
+                        #if word in countTotal: #Si la palabra esta en el conteo suma
+                            #countTotal[word]+=1 
+                        #else:             #Si no, es la primera vez que aparece la palabra
+                            #countTotal[word] = 1
+
+                    end = time.time()
+                    total+= (end - start)
+
+        print("Proyecto_IDS/files/"+filename, "\t", end - start)
+        endF = time.perf_counter()
+
+    #countTotal.update(countTotalAr)
+    with open("Dictionary_List.txt","w") as fin:   
+        for key, value in countTotalAr.items():             
+            value = str(value)
+            value_2 = str(value)           
+            
+            #fin.write(key+", "+value+", "+value_2+"\n")            
+            mytable.add_row([key,value,value_2 ])        
+        stingtable= mytable.get_string()
+        fin.write(stingtable)
+        
+    print("\ntiempo total en acumular el diccionario:", f"{total:.2f}", "segundos")
+    print("\ntiempo total de ejecucion:", f"{endF-startF:.2f}", "segundos")
+    
+            
+    sys.stdout.close()   
+
+    
+def Posting():
+    startF = time.perf_counter()
+    total = 0
+    countTotalAr = dict()
+    countTotal = dict()
+    
+    mytable= PrettyTable(["Nombre_Archivo","Frecuencia(repeticiones)del token en el archivo"])
     sys.stdout = open("Diccionario.txt", "w+") #creacion de txt con los tiempos
     for filename in os.listdir(archivos):
         start = time.time()
@@ -245,9 +303,9 @@ def Diccionario():
     with open("Postin_List.txt","w") as fin:   
         for key, value in countTotalAr.items():             
             value = str(value)           
-            value_2= str(countTotal.get(key))
+            
             #fin.write(key+", "+value+", "+value_2+"\n")            
-            mytable.add_row([key,value,value_2])        
+            mytable.add_row([key,value])        
         stingtable= mytable.get_string()
         fin.write(stingtable)
         
