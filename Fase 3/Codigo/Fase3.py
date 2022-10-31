@@ -12,6 +12,7 @@ archivosList = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad
 archivosToken = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Actividad5ArchivoDuplicado\Codigo\FilesToken" # Carpeta para almacenar listas tokenizadas
 
 
+
 #Funcion para abrir y cronometrar los archivos 
 def open_file():
 
@@ -249,7 +250,7 @@ def Diccionario():
     with open("Dictionary_List.txt","w") as fin:   
         for key, value in countTotalAr.items():             
             value = str(value)
-            value_2 = list (enumerate(value))
+            value_2 = str(map(value,word)) 
                     
             
             #fin.write(key+", "+value+", "+value_2+"\n")            
@@ -307,7 +308,7 @@ def Posting():
     #countTotal.update(countTotalAr)
     with open("Postin_List.txt","w") as fin:   
         for key, value in countTotalAr.items():             
-            value = str(value)           
+            value = re.findall(word, value)         
             
             #fin.write(key+", "+value+", "+value_2+"\n")            
             mytable.add_row([key,value])        
@@ -328,4 +329,4 @@ create_list()
 tokenization()
 Ascii()
 Diccionario()
-
+Posting()
