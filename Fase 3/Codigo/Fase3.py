@@ -6,10 +6,10 @@ import time # libreria para cronometrar
 from bs4 import BeautifulSoup # libreria para eliminar tags html - (pip install beautifulsoup4)
 from prettytable import PrettyTable
 
-archivos = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Fase3\Files" # Carpeta de archivos html
-archivosfix = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Fase3\Codigo\FilesFix" # Carpeta para almacenar archivos html sin etiquetas
-archivosList = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Fase3\Codigo\FilesList" # Carpeta para almacenar lista de texto de los html
-archivosToken = r"C:\Users\USER\Documents\GitHub\Proyecto_de_ingenieria\Fase3\Codigo\FilesToken" # Carpeta para almacenar listas tokenizadas
+archivos = r"C:\Users\Hp\Documents\Github\Proyecto_de_ingenieria\Fase 3\Files" # Carpeta de archivos html
+archivosfix = r"C:\Users\Hp\Documents\GitHub\Proyecto_de_ingenieria\Fase 3\Codigo\FilesFix" # Carpeta para almacenar archivos html sin etiquetas
+archivosList = r"C:\Users\Hp\Documents\GitHub\Proyecto_de_ingenieria\Fase 3\Codigo\FilesList" # Carpeta para almacenar lista de texto de los html
+archivosToken = r"C:\Users\Hp\Documents\GitHub\Proyecto_de_ingenieria\Fase 3\Codigo\FilesToken" # Carpeta para almacenar listas tokenizadas
 
 
 
